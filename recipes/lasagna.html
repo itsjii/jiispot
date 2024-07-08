@@ -42,19 +42,42 @@
         <li>Cook 45 minutes</li>
     </ol></p>
     <button onclick="changeBackgroundColor()">ur gay</button>
+    <button onclick="setFavoriteColor()">set fav color</button>
+    <button onclick="useFavoriteColor()">set a fav color goyim</button>
 
     <script>
         function changeBackgroundColor() {
-            // Generate random RGB values
+            // generate rbg
             var r = Math.floor(Math.random() * 256);
             var g = Math.floor(Math.random() * 256);
             var b = Math.floor(Math.random() * 256);
 
-            // Construct RGB color string
+            // rgb string
             var randomColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
-            // Apply the random color as the background color
+            // set random color as background color
             document.body.style.backgroundColor = randomColor;
+        }
+
+        function setFavoriteColor() {
+            //gets current background color
+            var currentColor = document.body.style.backgroundColor;
+            
+            //store color in storage
+            sessionStorage.setItem('favoriteColor', currentColor);
+            alert('fav color set');
+        }
+
+        function useFavoriteColor() {
+            //get fav color from localStorage
+            var favoriteColor = sessionStorage.getItem('favoriteColor');
+
+            if (favoriteColor) {
+                //sets fav color as background
+                document.body.style.backgroundColor = favoriteColor;
+            } else {
+                alert('no fav color set retard');
+            }
         }
     </script>
 </body>
