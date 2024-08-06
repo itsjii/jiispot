@@ -17,4 +17,4 @@ function findPrimes(x){
 
 let x=parseInt(prompt("Enter the value of x: "), 10);
 let primeNumbers=findPrimes(x);
-console.log("Prime numbers from 0 to "+x+";", primeNumbers);
+console.log("Prime numbers from 0 to "+x+":", primeNumbers);
